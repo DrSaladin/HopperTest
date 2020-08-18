@@ -1,16 +1,16 @@
 .side-error-warning {
   background: rgba(251, 217, 44, 0.16);
   border-radius: 0 4px 4px 0;
-  padding: 20px 40px 20px 80px;
+  padding: 20px 40px 20px 20px;
   box-sizing: border-box;
-  width: 473px;
-  height: 90px;
+  width: 300px;
+  min-height: 90px;
   margin-bottom: 20px;
   position: relative;
 }
 
 .side-error-warning__title {
-  font-family: "Ubuntu", Arial, sans-serif;
+  font-family: @ubuntu-font;
   font-weight: bold;
   font-size: 13px;
   line-height: 15px;
@@ -19,7 +19,7 @@
 }
 
 .side-error-warning__text {
-  font-family: "Ubuntu", Arial, sans-serif;
+  font-family: @ubuntu-font;
   font-size: 10px;
   line-height: 11px;
   color: #333333;
@@ -83,5 +83,12 @@
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .side-error-warning {
+    padding: 20px 40px 20px 80px;
+    width: 473px;
   }
 }
