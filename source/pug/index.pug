@@ -1,0 +1,85 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width,initial-scale=1')
+  title Hopper Test
+  link(rel='stylesheet' href='css/style.min.css')
+  link(rel='preload' href='fonts/Ubuntu-Bold.woff' as='font' type='font/woff')
+  link(rel='preload' href='fonts/Ubuntu-LightItalic.woff' as='font' type='font/woff')
+  link(rel='preload' href='fonts/Ubuntu-Regular.woff' as='font' type='font/woff')
+main.page-main
+  section.working-group
+    .container
+      h1.working-group__title
+        |Профиль рабочей группы
+      p.working-group__disclamer
+        |В данном разделе вы можете посмотреть и отредактировать информацию по своей рабочей группе, настроить права участников, расшарить настройки полностью или частично для других рабочих групп, а также сделать полную копию вашей рабочей группы с ограниченным доступом для тонкой настройки без публичных оповещений.
+      h2.working-group__subtitle
+        |Основная информация
+      .working-group__error-warning.side-error-warning.side-error-warning--hidden
+        p.side-error-warning__title
+          |Внимание!
+        p.side-error-warning__text
+          |Ваши данные сохранены в браузере, но не отправлены на сервер. Нажмите кнопку “Отправить”, чтобы завершить редактирование.
+
+
+      form(action="").working-group__form.working-group-form
+        .working-group-form__textinputs-wrapper
+          label(for="working-group-address").working-group-form__label
+            span.working-group-form__label-text
+              |Название группы
+            input(type="text" name="working-group-address" id="working-group-address" placeholder="Введите название группы")
+          label(for="working-group-alias").working-group-form__label
+            span.working-group-form__label-text
+              |Алиас
+            input(type="text" name="working-group-alias" id="working-group-alias" placeholder="Введите алиас")
+          label(for="working-group-email").working-group-form__label
+            span.working-group-form__label-text
+              |Электронная почта для обращений
+            input(type="email" name="working-group-email" id="working-group-email" placeholder="Введите электронную почту для обращений")
+          label(for="working-group-tel").working-group-form__label
+            span.working-group-form__label-text
+              |Телефон представителя
+            input(type="tel" name="working-group-tel" id="working-group-tel" placeholder="+7 (XXX) XXX-XX-XX")
+          label(for="working-group-representative").working-group-form__label
+            span.working-group-form__label-text
+              |ФИО представителя
+            input(type="text" name="working-group-representative" id="working-group-representative" placeholder="Введите ФИО представителя")
+          label(for="working-group-responsible").working-group-form__label
+            span.working-group-form__label-text
+              |Должность ответственного
+            input(type="text" name="working-group-responsible" id="working-group-responsible" placeholder="Введите должность ответственного")
+        .working-group-form__textarea-wrapper
+          p.working-group-form__back-textarea-reference
+            |Описание рабочей группы для внутреннего использования
+          textarea(name="working-group-back-description", cols="30", rows="10" placeholder="Введите краткое и емкое описание").working-group-form__back-description
+
+        input(type="checkbox" name="working-group-description" id="working-group-description")
+        label(for="working-group-description")
+          |Публичное описание отличается от внутреннего
+
+        .working-group-form__textarea-wrapper
+          p.working-group-form__front-textarea-reference
+            |Публичное описание рабочей группы
+          textarea(name="working-group-front-description", cols="30", rows="10" placeholder="Введите краткое и емкое описание").working-group-form__front-description
+
+        .working-group-form__buttons-wrapper
+          .working-group-form__submit-cancel-buttons
+            button.working-group-form__submit-button
+              |Отправить на модерацию
+            button.working-group-form__cancel-button
+              |Отмена
+
+
+          button.working-group-form__draft-button
+            |Сохранить в мои черновики
+
+script(src="js/script.js")
+
+
+
+
+
+
+
+

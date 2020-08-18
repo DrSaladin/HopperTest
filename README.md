@@ -1,4 +1,4 @@
-Проект "Toxin Hotel" для Fullstack Development
+Проект Спасибо от Сбербанка
 
 Превью сайта
 
