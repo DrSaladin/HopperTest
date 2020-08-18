@@ -1,25 +1,87 @@
 .side-error-warning {
   background: rgba(251, 217, 44, 0.16);
   border-radius: 0 4px 4px 0;
+  padding: 20px 40px 20px 80px;
+  box-sizing: border-box;
   width: 473px;
   height: 90px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .side-error-warning__title {
-  font-family: @ubuntu-font;
+  font-family: "Ubuntu", Arial, sans-serif;
   font-weight: bold;
   font-size: 13px;
   line-height: 15px;
-  color: @color-brown;
+  color: #333333;
+  margin: 0 0 12px 0;
 }
 
 .side-error-warning__text {
-  font-family: @ubuntu-font;
+  font-family: "Ubuntu", Arial, sans-serif;
   font-size: 10px;
   line-height: 11px;
-  color: @color-brown;
+  color: #333333;
+  margin: 0;
+}
+
+.side-error-warning__warning-svg {
+  position: absolute;
+  right: 25px;
+  top: 35px;
 }
 
 .side-error-warning--hidden {
   display: none;
+}
+
+.side-error-warning--display {
+  display: block;
+  animation: bounce 0.6s;
+}
+
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  70% {
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+
+  90% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  70% {
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+
+  90% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
 }

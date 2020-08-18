@@ -16,46 +16,60 @@ main.page-main
         |В данном разделе вы можете посмотреть и отредактировать информацию по своей рабочей группе, настроить права участников, расшарить настройки полностью или частично для других рабочих групп, а также сделать полную копию вашей рабочей группы с ограниченным доступом для тонкой настройки без публичных оповещений.
       h2.working-group__subtitle
         |Основная информация
-      .working-group__error-warning.side-error-warning.side-error-warning--hidden
-        p.side-error-warning__title
-          |Внимание!
-        p.side-error-warning__text
-          |Ваши данные сохранены в браузере, но не отправлены на сервер. Нажмите кнопку “Отправить”, чтобы завершить редактирование.
+    .working-group__error-warning.side-error-warning.side-error-warning--hidden
+      p.side-error-warning__title
+        |Внимание!
+      p.side-error-warning__text
+        |Ваши данные сохранены в браузере, но не отправлены на сервер. Нажмите кнопку “Отправить”, чтобы завершить редактирование.
+      img(src="img/warning-sign.svg", width="19" height="17" alt="Сохраните или отправьте данные").side-error-warning__warning-svg
 
-
-      form(action="").working-group__form.working-group-form
+    .container
+      form(action="get").working-group__form.working-group-form
         .working-group-form__textinputs-wrapper
           label(for="working-group-address").working-group-form__label
             span.working-group-form__label-text
               |Название группы
-            input(type="text" name="working-group-address" id="working-group-address" placeholder="Введите название группы")
+            input(type="text" name="working-group-address" id="working-group-address" placeholder="Введите название группы" required).working-group-form__input
+            span.working-group-form__custom-validity-plate
+              |Не забывай обо мне, заполни!
           label(for="working-group-alias").working-group-form__label
             span.working-group-form__label-text
               |Алиас
-            input(type="text" name="working-group-alias" id="working-group-alias" placeholder="Введите алиас")
+            input(type="text" pattern="^[a-zA-Z]+$" name="working-group-alias" id="working-group-alias" placeholder="Введите алиас" required).working-group-form__input
+            span.working-group-form__custom-validity-plate.working-group-form__custom-validity-plate--alias
+              |Алиас не может содержать русские буквы и пробелы
           label(for="working-group-email").working-group-form__label
             span.working-group-form__label-text
               |Электронная почта для обращений
-            input(type="email" name="working-group-email" id="working-group-email" placeholder="Введите электронную почту для обращений")
+            input(type="email" name="working-group-email" id="working-group-email" placeholder="Введите электронную почту для обращений" required).working-group-form__input
+            span.working-group-form__custom-validity-plate
+              |Не забывай обо мне, заполни!
           label(for="working-group-tel").working-group-form__label
             span.working-group-form__label-text
               |Телефон представителя
-            input(type="tel" name="working-group-tel" id="working-group-tel" placeholder="+7 (XXX) XXX-XX-XX")
+            input(type="tel" name="working-group-tel" id="working-group-tel" placeholder="+7 (XXX) XXX-XX-XX" required).working-group-form__input
+            span.working-group-form__custom-validity-plate
+              |Не забывай обо мне, заполни!
           label(for="working-group-representative").working-group-form__label
             span.working-group-form__label-text
               |ФИО представителя
-            input(type="text" name="working-group-representative" id="working-group-representative" placeholder="Введите ФИО представителя")
+            input(type="text" name="working-group-representative" id="working-group-representative" placeholder="Введите ФИО представителя" required).working-group-form__input
+            span.working-group-form__custom-validity-plate
+              |Не забывай обо мне, заполни!
           label(for="working-group-responsible").working-group-form__label
             span.working-group-form__label-text
               |Должность ответственного
-            input(type="text" name="working-group-responsible" id="working-group-responsible" placeholder="Введите должность ответственного")
+            input(type="text" name="working-group-responsible" id="working-group-responsible" placeholder="Введите должность ответственного" required).working-group-form__input
+            span.working-group-form__custom-validity-plate
+              |Не забывай обо мне, заполни!
         .working-group-form__textarea-wrapper
           p.working-group-form__back-textarea-reference
             |Описание рабочей группы для внутреннего использования
           textarea(name="working-group-back-description", cols="30", rows="10" placeholder="Введите краткое и емкое описание").working-group-form__back-description
 
-        input(type="checkbox" name="working-group-description" id="working-group-description")
-        label(for="working-group-description")
+        label(for="working-group-description-check").working-group-form__checkbox-label
+          input(type="checkbox" name="working-group-description" id="working-group-description-check").working-group-form__checkbox-input.visually-hidden
+          span.working-group-form__custom-checkbox
           |Публичное описание отличается от внутреннего
 
         .working-group-form__textarea-wrapper
@@ -65,15 +79,16 @@ main.page-main
 
         .working-group-form__buttons-wrapper
           .working-group-form__submit-cancel-buttons
-            button.working-group-form__submit-button
+            button(type="submit").working-group-form__submit-button
               |Отправить на модерацию
-            button.working-group-form__cancel-button
+            button(type="reset").working-group-form__cancel-button
               |Отмена
 
 
           button.working-group-form__draft-button
             |Сохранить в мои черновики
 
+script(src="js/render-side-alert.js")
 script(src="js/script.js")
 
 
